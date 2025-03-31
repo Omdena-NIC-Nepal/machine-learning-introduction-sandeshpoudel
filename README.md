@@ -1,125 +1,88 @@
-# Machine Learning Beginner Project: Linear Regression
-### Project Title: Predicting House Prices Using Linear Regression
+#Predicting House Prices Using Linear Regression
 
-**Objective:** To introduce students to supervised learning, focusing on linear regression, by guiding them through a project that predicts house prices based on a variety of features.
+#Overview
 
-**Dataset:** We'll use the "Boston Housing Dataset" from the UCI Machine Learning Repository. This dataset contains information about housing in Boston, including features such as the number of rooms, age of the house, and crime rate, along with the target variable, which is the median value of owner-occupied homes.
+This project demonstrates supervised machine learning through Linear Regression. It predicts house prices using various features from a real-world dataset.
 
-### Project Structure:
-
-- Data Exploration and Preprocessing
-- Model Building and Training
-- Model Evaluation
-- Feature Engineering and Improvement
-- Collaboration and Version Control
-  
-
-├── data
-
-│   └── boston_housing.csv
-
-├── notebooks
-
-│   ├── EDA.ipynb
-
-
-│   ├── Data_Preprocessing.ipynb
-
-│   ├── Model_Training.ipynb
-
-│   └── Model_Evaluation.ipynb
-
-├── scripts
-
-│   ├── data_preprocessing.py
-
-│   ├── train_model.py
-
-│   └── evaluate_model.py
-
-├── README.md
-
-├── requirements.txt
-
-└── .gitignore
-
-## 2. Data Exploration and Preprocessing
-#### **Task 1:** Data Exploration
-
-Notebook: notebooks/EDA.ipynb
-Steps:
-- Load the dataset.
-- Explore the data structure, types, and summary statistics.
-- Visualize relationships between features and the target variable.
-- Identify missing values and outliers.
-
-
-#### Task 2: Data Preprocessing
-
-Notebook: notebooks/Data_Preprocessing.ipynb
-Steps:
-- Handle missing values and outliers.
-- Encode categorical variables.
-- Normalize/standardize numerical features.
-- Split the data into training and testing sets.
-- Script: scripts/data_preprocessing.py
-
-
-### 3. Model Building and Training
-#### Task 3: Model Training
-
-Notebook: notebooks/Model_Training.ipynb
-Steps:
-- Choose appropriate features for the model.
-- Train a linear regression model.
-- Perform hyperparameter tuning (if applicable).
-
-- Script: scripts/train_model.py
-
-### 4. Model Evaluation
-#### Task 4: Model Evaluation
-
-Notebook: notebooks/Model_Evaluation.ipynb
-Steps:
-- Evaluate the model using metrics such as Mean Squared Error (MSE), R-squared.
-- Plot residuals to check the assumptions of linear regression.
-- Compare model performance with different feature sets or preprocessing steps.
-- Script: scripts/evaluate_model.py
-### 5. Feature Engineering and Improvement
-#### Task 5: Feature Engineering
-
-Notebook: notebooks/Feature_Engineering.ipynb
-Steps:
-- Create new features that might improve model performance.
-- Test different feature combinations.
-- Evaluate the impact of new features on model performance.
-
-### 6. Collaboration and Version Control
-#### Task 6: Collaboration and Version Control
-
-Steps:
-# Ensure each student works on their branch.
-- Regularly merge branches after reviewing and resolving conflicts.
-- Use pull requests to review and discuss changes before merging.
-- Git Commands: Provide a list of essential Git commands for students to use.
-
-
-## Dataset Details
-Source: Boston Housing Dataset on UCI Machine Learning Repository
+Dataset
+Source: Boston Housing Dataset (Custom dataset variant)
+Data file: data/boston_housing.csv
 
 Features:
+price (Target variable)
+Numeric features: area, bedrooms, bathrooms, stories, parking
+Categorical features: mainroad, guestroom, basement, hotwaterheating, airconditioning, prefarea, furnishingstatus
 
-- CRIM: per capita crime rate by town.
-- ZN: proportion of residential land zoned for lots over 25,000 sq. ft.
-- INDUS: proportion of non-retail business acres per town.
-- CHAS: Charles River dummy variable (1 if tract bounds river; 0 otherwise).
-- NOX: nitrogen oxides concentration (parts per 10 million).
-- RM: average number of rooms per dwelling.
-- AGE: proportion of owner-occupied units built prior to 1940.
-- DIS: weighted distances to five Boston employment centers.
-- RAD: index of accessibility to radial highways.
-- TAX: full-value property tax rate per $10,000.
-- PTRATIO: pupil-teacher ratio by town.
-- B: 1000(Bk - 0.63)^2 where Bk is the proportion of black residents by town.
-- LSTAT: percentage of lower status of the population.
-- MEDV: median value of owner-occupied homes in $1000s (Target).
+Project Structure
+├── data
+│   └── boston_housing.csv
+├── notebooks
+│   ├── EDA.ipynb
+│   ├── Data_Preprocessing.ipynb
+│   ├── Model_Training.ipynb
+│   └── Model_Evaluation.ipynb
+├── scripts
+│   ├── data_preprocessing.py
+│   ├── train_model.py
+│   ├── evaluate_model.py
+│   └── main.py                  
+├── README.md
+├── requirements.txt
+└── .gitignore
+
+
+Setup and Installation
+
+Clone the repository:
+
+git clone https://github.com/Omdena-NIC-Nepal/machine-learning-introduction-sandeshpoudel.git
+
+
+Create and activate the virtual environment:
+python -m venv venv
+# On Windows: venv\Scripts\activate
+
+Install dependencies:
+
+pip install -r requirements.txt
+
+Workflow Steps
+
+1. Exploratory Data Analysis (EDA)
+
+Explore dataset
+Visualize feature distributions
+Check for outliers and missing values
+
+2. Data Preprocessing
+Handle outliers
+Encode categorical variables
+Standardize numeric features
+Split dataset into training and testing
+
+3. Model Training
+Train Linear Regression model
+
+4. Model Evaluation
+Predict house prices on test data
+Evaluate using metrics: Mean Squared Error (MSE), R-squared (R²)
+Visualize actual vs predicted prices and residuals
+Usage
+
+You can reuse the scripts for quick processing:
+
+from scripts.data_preprocessing import preprocess_data
+from scripts.train_model import train_linear_regression
+from scripts.evaluate_model import evaluate_model
+
+X_train, X_test, y_train, y_test = preprocess_data('data/boston_housing.csv')
+model = train_linear_regression(X_train, y_train)
+evaluate_model(model, X_test, y_test)
+
+Author
+Sandesh Poudel
+9855081056
+contactsandesh.poudel@gmail.com
+
+License
+This project is open-source and available under the MIT License.
