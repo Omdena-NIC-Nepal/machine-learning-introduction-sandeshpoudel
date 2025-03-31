@@ -15,14 +15,13 @@
 - Collaboration and Version Control
   
 
-├── data
+├── data # done
 
-│   └── boston_housing.csv
+│   └── boston_housing.csv      #done
 
-├── notebooks
+├── notebooks   #done
 
-│   ├── EDA.ipynb
-
+│   ├── EDA.ipynb   #done
 
 │   ├── Data_Preprocessing.ipynb
 

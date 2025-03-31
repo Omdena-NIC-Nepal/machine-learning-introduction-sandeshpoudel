@@ -1,0 +1,10 @@
+EDA.ipynb 
+    ⬇️
+Data_Preprocessing.ipynb 
+    ⬇️
+Model_Training.ipynb 
+    ⬇️
+Model_Evaluation.ipynb
+
+and later in Scripts
+
